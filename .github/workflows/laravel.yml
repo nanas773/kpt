@@ -5,13 +5,14 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+defaults:
+  run:
+    working-directory: ./kpt
 
 jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./kpt
 
     steps:
     - uses: shivammathur/setup-php@b7d1d9c9a92d8d8463ce36d7f60da34d461724f8
