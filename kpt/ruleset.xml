@@ -22,15 +22,11 @@
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/migrations/*</exclude-pattern>
 
-    <!-- PSR2をベースとする -->
-    <rule ref="PSR2">
-        <!-- 除外したい項目 -->
-        <exclude name="Generic.Files.LineLength.TooLong"/>
+    <rule ref="PSR12">
     </rule>
 
     <arg name="colors"/>
     <arg value="p"/>
 
     <ini name="memory_limit" value="128M"/>
-    <rule ref="PSR2"/>
 </ruleset>
