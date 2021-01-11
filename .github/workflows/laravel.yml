@@ -31,6 +31,8 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
+    - name: Execute phpcs
+      run: ./vendor/bin/phpcs --standard=ruleset.xm
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
