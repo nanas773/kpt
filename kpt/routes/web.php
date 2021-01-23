@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/auth/redirect', function() {
+Route::get('/auth/redirect', function () {
     return Socialite::driver('github')->redirect();
 })->name('login.github');
 
 Route::get('/callback', [HomeController::class, 'callback']);
-
