@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,17 +14,11 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/auth/redirect', function() {
     return Socialite::driver('github')->redirect();
-});
+})->name('login.github');
 
-Route::get('/auth/callback', function() {
-    $user = Socialite::driver('github')->user();
-    $token = $user->token;
-    Log::debug($token);
-});
+Route::get('/callback', [HomeController::class, 'callback']);
 
