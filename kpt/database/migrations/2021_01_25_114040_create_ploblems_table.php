@@ -14,8 +14,25 @@ class CreatePloblemsTable extends Migration
     public function up()
     {
         Schema::create('problems', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //PK,プロジェクトID
+            $table->integer('id')->autoIncrement();
+            $table->primary('id');
+
+            //プロジェクトID
+            $table->integer('project_id');
+            $table->foreign('team_id')->references('id')->on('projects');
+
+            //内容
+            $table->string('content',100);
+
+            //作成日時
+            $table->dateTime('created_at',0);
+
+            //更新日時
+            $table->dateTime('modified_at',0);
+
+            //解決したか否か
+            $table->tinyInteger('is_resolved');
         });
     }
 
