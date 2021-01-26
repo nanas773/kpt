@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->primary('id');
 
             //プロジェクトの説明
-            $table->string('description',1000);
+            $table->string('description', 1000);
 
             //所有チームID
             //teamsテーブルの外部キー
@@ -27,10 +27,10 @@ class CreateProjectsTable extends Migration
             $table->foreign('team_id')->references('id')->on('teams');
 
             //作成日時
-            $table->date('created_at');
+            $table->dateTime('created_at', 0);
 
             //更新日時
-            $table->date('modified_at');
+            $table->dateTime('modified_at', 0);
         });
     }
 
