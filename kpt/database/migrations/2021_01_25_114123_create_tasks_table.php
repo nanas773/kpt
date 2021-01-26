@@ -14,8 +14,29 @@ class CreateTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //PK,タスクID
+            $table->integer('id')->autoIncrement();
+            $table->primary('id');
+
+            //プロジェクトID
+            $table->integer('project_id');
+            $table->foreign('project_id')->references('id')->on('projects');
+
+            //problem ID
+            $table->integer('problem_id');
+            $table->foreign('problem_id')->references('id')->on('problems');
+
+            //種類
+            $table->string('state', 1);
+
+            //内容
+            $table->string('content', 100);
+
+            //作成日時
+            $table->dateTime('created_at', 0);
+
+            //更新日時
+            $table->dateTime('modified_at', 0);
         });
     }
 
