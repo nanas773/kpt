@@ -14,8 +14,18 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //PK,チームID
+            $table->integer('id')->autoIncrement();
+            $table->primary('id');
+
+            //チーム名
+            $table->string('name', 20);
+
+            //チームメンバーID
+            $table->integer('user_id');
+
+            //外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
