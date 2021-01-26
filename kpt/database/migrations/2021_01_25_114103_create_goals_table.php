@@ -14,8 +14,29 @@ class CreateGoalsTable extends Migration
     public function up()
     {
         Schema::create('goals', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //PK,目標ID
+            $table->integer('id')->autoIncrement();
+            $table->primary('id');
+
+            //内容
+            $table->string('content',100);
+
+            //プロジェクトID
+            //teamsテーブルの外部キー
+            $table->integer('project_id');
+            $table->foreign('project_id')->references('id')->on('projects');
+
+            //作成日時
+            $table->dateTime('created_at', 0);
+
+            //更新日時
+            $table->dateTime('modified_at', 0);
+
+            //期限
+            $table->date('limit_date');
+
+            //完了したか否か
+            $table->tinyInteger('is_completed');
         });
     }
 
