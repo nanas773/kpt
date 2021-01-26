@@ -14,7 +14,7 @@ class CreatePloblemsTable extends Migration
     public function up()
     {
         Schema::create('problems', function (Blueprint $table) {
-            //PK,プロジェクトID
+            //PK,問題ID
             $table->integer('id')->autoIncrement();
             $table->primary('id');
 
