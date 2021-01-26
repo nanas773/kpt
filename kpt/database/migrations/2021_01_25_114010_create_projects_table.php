@@ -14,8 +14,23 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            //PK,プロジェクトID
+            $table->integer('id')->autoIncrement();
+            $table->primary('id');
+
+            //プロジェクトの説明
+            $table->string('description',1000);
+
+            //所有チームID
+            //teamsテーブルの外部キー
+            $table->integer('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
+
+            //作成日時
+            $table->date('created_at');
+
+            //更新日時
+            $table->date('modified_at');
         });
     }
 
