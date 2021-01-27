@@ -15,8 +15,7 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             //PK,チームID
-            $table->integer('id')->autoIncrement();
-            $table->primary('id');
+            $table->integer('id')->primary()->autoIncrement();
 
             //チーム名
             $table->string('name', 20);

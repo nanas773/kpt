@@ -16,7 +16,6 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             //PK,タスクID
             $table->integer('id')->autoIncrement();
-            $table->primary('id');
 
             //プロジェクトID
             $table->integer('project_id');

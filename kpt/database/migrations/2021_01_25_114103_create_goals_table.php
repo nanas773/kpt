@@ -16,7 +16,6 @@ class CreateGoalsTable extends Migration
         Schema::create('goals', function (Blueprint $table) {
             //PK,目標ID
             $table->integer('id')->autoIncrement();
-            $table->primary('id');
 
             //内容
             $table->string('content',100);
