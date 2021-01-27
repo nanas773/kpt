@@ -27,7 +27,7 @@ class CreateTasksTable extends Migration
             $table->foreign('problem_id')->references('id')->on('problems');
 
             //種類
-            $table->string('state', 1);
+            $table->string('state', 4);
 
             //内容
             $table->string('content', 100);
