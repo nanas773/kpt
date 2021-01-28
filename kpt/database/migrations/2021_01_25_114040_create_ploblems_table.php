@@ -19,16 +19,16 @@ class CreatePloblemsTable extends Migration
 
             //プロジェクトID
             $table->integer('project_id');
-            $table->foreign('team_id')->references('id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('projects');
 
             //内容
-            $table->string('content',100);
+            $table->string('content', 100);
 
             //作成日時
-            $table->dateTime('created_at',0);
+            $table->dateTime('created_at', 0);
 
             //更新日時
-            $table->dateTime('modified_at',0);
+            $table->dateTime('modified_at', 0);
 
             //解決したか否か
             $table->tinyInteger('is_resolved');
