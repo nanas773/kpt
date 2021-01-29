@@ -22,7 +22,7 @@ class CreateTasksTable extends Migration
             $table->foreign('project_id')->references('id')->on('projects');
 
             //problem ID
-            $table->integer('problem_id');
+            $table->integer('problem_id')->nullable($value = true);
             $table->foreign('problem_id')->references('id')->on('problems');
 
             //種類
