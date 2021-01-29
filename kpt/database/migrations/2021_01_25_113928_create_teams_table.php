@@ -23,6 +23,9 @@ class CreateTeamsTable extends Migration
             //チームメンバーID
             $table->integer('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+
+            //作成日時、更新日時
+            $table->timestamps();
         });
     }
 

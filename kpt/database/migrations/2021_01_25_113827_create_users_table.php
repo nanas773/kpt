@@ -28,6 +28,9 @@ class CreateUsersTable extends Migration
 
             //画像パス
             $table->string('image_path', 100);
+
+            //作成日時、更新日時
+            $table->timestamps();
         });
     }
 

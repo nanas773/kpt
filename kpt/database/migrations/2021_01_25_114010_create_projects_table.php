@@ -25,11 +25,8 @@ class CreateProjectsTable extends Migration
             $table->integer('team_id');
             $table->foreign('team_id')->references('id')->on('teams');
 
-            //作成日時
-            $table->dateTime('created_at', 0);
-
-            //更新日時
-            $table->dateTime('modified_at', 0);
+            //作成日時、更新日時
+            $table->timestamps();
         });
     }
 

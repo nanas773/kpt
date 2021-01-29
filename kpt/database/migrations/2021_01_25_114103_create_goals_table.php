@@ -25,17 +25,14 @@ class CreateGoalsTable extends Migration
             $table->integer('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
 
-            //作成日時
-            $table->dateTime('created_at', 0);
-
-            //更新日時
-            $table->dateTime('modified_at', 0);
-
             //期限
             $table->date('limit_date')->comment('期限');
 
             //完了したか否か
             $table->tinyInteger('is_completed')->comment('完了したか否か');
+
+            //作成日時、更新日時
+            $table->timestamps();
         });
     }
 

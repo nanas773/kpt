@@ -24,14 +24,11 @@ class CreatePloblemsTable extends Migration
             //内容
             $table->string('content', 100);
 
-            //作成日時
-            $table->dateTime('created_at', 0);
-
-            //更新日時
-            $table->dateTime('modified_at', 0);
-
             //解決したか否か
             $table->tinyInteger('is_resolved')->comment('解決したか否か');
+
+            //作成日時、更新日時
+            $table->timestamps();
         });
     }
 

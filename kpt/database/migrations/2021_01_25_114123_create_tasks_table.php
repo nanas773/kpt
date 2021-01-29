@@ -31,11 +31,8 @@ class CreateTasksTable extends Migration
             //内容
             $table->string('content', 100)->comment('内容');
 
-            //作成日時
-            $table->dateTime('created_at', 0);
-
-            //更新日時
-            $table->dateTime('modified_at', 0);
+            //作成日時、更新日時
+            $table->timestamps();
         });
     }
 
