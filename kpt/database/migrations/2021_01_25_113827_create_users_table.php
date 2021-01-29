@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
 
             //表示名
-            $table->string('display_name', 20);
+            $table->string('display_name', 20)->comment('表示名');
 
             //画像パス
             $table->string('image_path', 100);

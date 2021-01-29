@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->integer('id')->autoIncrement();
 
             //プロジェクトの説明
-            $table->string('description', 1000);
+            $table->string('description', 1000)->comment('プロジェクトの説明');
 
             //所有チームID
             //teamsテーブルの外部キー

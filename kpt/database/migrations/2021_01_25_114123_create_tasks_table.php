@@ -26,10 +26,10 @@ class CreateTasksTable extends Migration
             $table->foreign('problem_id')->references('id')->on('problems');
 
             //種類
-            $table->string('state', 4);
+            $table->string('state', 4)->comment('keep,try,doneの区別');
 
             //内容
-            $table->string('content', 100);
+            $table->string('content', 100)->comment('内容');
 
             //作成日時
             $table->dateTime('created_at', 0);

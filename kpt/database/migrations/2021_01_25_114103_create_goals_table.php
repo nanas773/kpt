@@ -18,7 +18,7 @@ class CreateGoalsTable extends Migration
             $table->integer('id')->autoIncrement();
 
             //内容
-            $table->string('content',100);
+            $table->string('content',100)->comment('内容');
 
             //プロジェクトID
             //teamsテーブルの外部キー
@@ -32,10 +32,10 @@ class CreateGoalsTable extends Migration
             $table->dateTime('modified_at', 0);
 
             //期限
-            $table->date('limit_date');
+            $table->date('limit_date')->comment('期限');
 
             //完了したか否か
-            $table->tinyInteger('is_completed');
+            $table->tinyInteger('is_completed')->comment('完了したか否か');
         });
     }
 

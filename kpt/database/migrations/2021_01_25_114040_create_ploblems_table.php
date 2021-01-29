@@ -31,7 +31,7 @@ class CreatePloblemsTable extends Migration
             $table->dateTime('modified_at', 0);
 
             //解決したか否か
-            $table->tinyInteger('is_resolved');
+            $table->tinyInteger('is_resolved')->comment('解決したか否か');
         });
     }
 
