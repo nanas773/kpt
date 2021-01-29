@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->integer('id')->autoIncrement();
             
             //メールアドレス
-            $table->string('mail', 100);
+            $table->string('email', 100);
 
             //パスワード
             $table->string('password', 100);
