@@ -16,9 +16,9 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             //PK
             $table->integer('id')->autoIncrement();
-            
+
             //メールアドレス
-            $table->string('email', 100);
+            $table->string('email', 100)->unique();
 
             //パスワード
             $table->string('password', 100);
@@ -28,7 +28,6 @@ class CreateUsersTable extends Migration
 
             //画像パス
             $table->string('image_path', 100);
-            
         });
     }
 
