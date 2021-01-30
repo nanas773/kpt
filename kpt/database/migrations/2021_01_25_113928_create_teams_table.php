@@ -20,6 +20,9 @@ class CreateTeamsTable extends Migration
             //チーム名
             $table->string('name', 20);
 
+            //チーム説明
+            $table->string('description',1000);
+
             //チームメンバーID
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
