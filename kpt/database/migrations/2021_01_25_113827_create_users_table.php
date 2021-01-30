@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             //PK
-            $table->integer('id')->autoIncrement();
+            $table->id();
 
             //メールアドレス
             $table->string('email', 100)->unique();

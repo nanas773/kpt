@@ -15,7 +15,7 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             //PK,プロジェクトID
-            $table->integer('id')->autoIncrement();
+            $table->id();
 
             //プロジェクトの説明
             $table->string('description', 1000)->comment('プロジェクトの説明');
