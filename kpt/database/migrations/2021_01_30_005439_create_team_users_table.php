@@ -14,7 +14,17 @@ class CreateTeamUsersTable extends Migration
     public function up()
     {
         Schema::create('team_users', function (Blueprint $table) {
-            $table->id();
+            //ユーザID
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+            //チームID
+            $table->unsignedBigInteger('team_id');
+            $table->foreign('team_id')->references('id')->on('teams');
+
+            //複合PK
+            $table->primary(['user_id','team_id']);
+            
             $table->timestamps();
         });
     }
