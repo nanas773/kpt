@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
 
             //所有チームID
             //teamsテーブルの外部キー
-            $table->integer('team_id');
+            $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')->references('id')->on('teams');
 
             //作成日時、更新日時

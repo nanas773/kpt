@@ -18,11 +18,11 @@ class CreateTasksTable extends Migration
             $table->id();
 
             //プロジェクトID
-            $table->integer('project_id');
+            $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
 
             //problem ID
-            $table->integer('problem_id')->nullable($value = true);
+            $table->unsignedBigInteger('problem_id')->nullable($value = true);
             $table->foreign('problem_id')->references('id')->on('problems');
 
             //種類

@@ -21,7 +21,7 @@ class CreateTeamsTable extends Migration
             $table->string('name', 20);
 
             //チームメンバーID
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
             //作成日時、更新日時

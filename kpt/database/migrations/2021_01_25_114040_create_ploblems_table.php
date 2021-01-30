@@ -18,7 +18,7 @@ class CreatePloblemsTable extends Migration
             $table->id();
 
             //プロジェクトID
-            $table->integer('project_id');
+            $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
 
             //内容
