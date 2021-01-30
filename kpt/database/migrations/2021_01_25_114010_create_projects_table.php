@@ -17,6 +17,9 @@ class CreateProjectsTable extends Migration
             //PK,プロジェクトID
             $table->id();
 
+            //プロジェクト名
+            $table->string('name', 100);
+
             //プロジェクトの説明
             $table->string('description', 1000)->comment('プロジェクトの説明');
 
