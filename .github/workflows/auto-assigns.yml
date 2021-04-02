@@ -25,7 +25,7 @@ jobs:
       - name: Set reviewers
         env:
           # レビュアーはここに設定すること
-          REVIEWERS: "M9k21, yumi, ykyk1218, n06Ar"
+          REVIEWERS: "M9k21, mb-c16h18n3scl31985, ykyk1218, n06Ar"
         run: |
           reviewer_count=$(cat ${{ github.event_path }} | jq '.pull_request.requested_reviewers | length')
           if [[ 0 == $reviewer_count ]]; then
