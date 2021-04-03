@@ -1,38 +1,15 @@
-name: Assign auto
+name: Review Assign
 
 on:
   pull_request:
-    types: opened
+    types: [opened, ready_for_review]
 
 jobs:
   assign:
-    name: Set assignees and reviewers
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Set assignees
-        env:
-          ASSIGNEES: "${{ github.actor }}"
-        run: |
-          assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees | length')
-          if [[ 0 == $assignee_count ]]; then
-            assignees=$(echo "\"${ASSIGNEES// /}\"" | jq 'split(",")')
-            curl -X POST \
-                 -H "Content-Type: application/json" \
-                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                 -d "{ \"assignees\": $assignees }" \
-                 https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/assignees
-          fi
-      - name: Set reviewers
-        env:
-          # レビュアーはここに設定すること
-          REVIEWERS: "M9k21, mb-c16h18n3scl31985, ykyk1218, n06Ar"
-        run: |
-          reviewer_count=$(cat ${{ github.event_path }} | jq '.pull_request.requested_reviewers | length')
-          if [[ 0 == $reviewer_count ]]; then
-            reviewers=$(echo "\"${REVIEWERS// /}\"" | jq 'split(",") | .-["${{ github.actor }}"]')
-            curl -X POST \
-                 -H "Content-Type: application/json" \
-                 -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                 -d "{ \"reviewers\": $reviewers }" \
-                 https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers
-          fi
+      - uses: hkusu/review-assign-action@v1
+        with:
+          assignees: ${{ github.actor }}
+          reviewers: M9k21, mb-c16h18n3scl31985, ykyk1218, n06Ar
+          draft-keyword: wip
