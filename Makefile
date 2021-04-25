@@ -88,18 +88,6 @@ cache-clear:
 	docker-compose exec app composer clear-cache
 	@make optimize-clear
 	docker-compose exec app php artisan event:clear
-npm:
-	@make npm-install
-npm-install:
-	docker-compose exec web npm install
-npm-dev:
-	docker-compose exec web npm run dev
-npm-watch:
-	docker-compose exec web npm run watch
-npm-watch-poll:
-	docker-compose exec web npm run watch-poll
-npm-hot:
-	docker-compose exec web npm run hot
 yarn:
 	docker-compose exec web yarn
 yarn-install:
