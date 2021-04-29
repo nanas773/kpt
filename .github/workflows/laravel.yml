@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 defaults:
   run:
-    working-directory: ./kpt
+    working-directory: .
 
 jobs:
   laravel-tests:
