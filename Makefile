@@ -2,15 +2,6 @@ up:
 	docker-compose up -d
 build:
 	docker-compose build --no-cache --force-rm
-laravel-install:
-	docker-compose exec app composer create-project --prefer-dist laravel/laravel .
-create-project:
-	@make build
-	@make up
-	@make laravel-install
-	docker-compose exec app php artisan key:generate
-	docker-compose exec app php artisan storage:link
-	@make fresh
 install-recommend-packages:
 	docker-compose exec app composer require doctrine/dbal "^2"
 	docker-compose exec app composer require --dev barryvdh/laravel-ide-helper
