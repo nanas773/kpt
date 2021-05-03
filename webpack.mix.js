@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require("laravel-mix-vue3");
 
 /**
  * Webpackの設定
@@ -16,8 +17,4 @@ mix.webpackConfig({
 /**
  * 各ページで使用するJavaScript
  */
-
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.vue3('resources/js/pages/home/index.js', 'public/js/pages/home/index.js');
