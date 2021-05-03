@@ -11,13 +11,13 @@ class HomeController extends Controller
     {
         $loginUrl = route('login.github');
         return view('home.index', [
-                'title' => 'Login',
-                'description' => '',
-                'keywords' => 'KPT',
-                'scriptVars' => [
-                    'loginUrl' => $loginUrl
-                ],
-            ]);
+            'title' => 'Login',
+            'description' => '',
+            'keywords' => 'KPT',
+            'scriptVars' => [
+                'loginUrl' => $loginUrl
+            ],
+        ]);
     }
 
     public function callback()
