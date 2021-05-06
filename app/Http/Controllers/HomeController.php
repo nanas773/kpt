@@ -27,4 +27,15 @@ class HomeController extends Controller
         return view('home.callback', ['user' => $user]);
         # return redirect()->route('kpt');
     }
+
+    public function logout(): View {
+        return view('home.logout', [
+            'title' => 'Logout',
+            'description' => '',
+            'keywords' => 'KPT',
+            'scriptVars' => [
+                'logoutMessage' => 'Logoutしました'
+            ],
+        ]);
+    }
 }
