@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Laravel\Socialite\Facades\Socialite;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index() : View
     {
         $loginUrl = route('login.github');
         return view('home.index', [
