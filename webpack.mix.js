@@ -1,12 +1,9 @@
-const mix = require('laravel-mix');
-require("laravel-mix-vue3");
+var mix = require('laravel-mix')
+require("laravel-mix-vue3")
 
-/**
- * Webpackの設定
- */
 mix.webpackConfig({
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js','.ts', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@': __dirname + '/resources/',
@@ -18,5 +15,5 @@ mix.webpackConfig({
 /**
  * 各ページで使用するJavaScript
  */
-mix.vue3('resources/js/pages/home/index.js', 'public/js/pages/home/index.js');
-mix.vue3('resources/js/pages/home/logout.ts', 'public/js/pages/home/logout.js');
+mix.vue3('resources/js/pages/home/index.js', 'public/js/pages/home/index.js')
+mix.vue3('resources/js/pages/home/logout.ts', 'public/js/pages/home/logout.js')
