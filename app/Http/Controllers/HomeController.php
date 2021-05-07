@@ -8,7 +8,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 class HomeController extends Controller
 {
-    public function index() : View
+    public function index(): View
     {
         $loginUrl = route('login.github');
         return view('home.index', [
@@ -28,7 +28,8 @@ class HomeController extends Controller
         # return redirect()->route('kpt');
     }
 
-    public function logout(): View {
+    public function logout(): View
+    {
         return view('home.logout', [
             'title' => 'Logout',
             'description' => '',
