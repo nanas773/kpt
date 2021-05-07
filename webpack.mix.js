@@ -1,5 +1,6 @@
-var mix = require('laravel-mix')
+const mix = require('laravel-mix')
 require("laravel-mix-vue3")
+const tailwindcss = require('tailwindcss')
 
 mix.webpackConfig({
     resolve: {
@@ -16,4 +17,13 @@ mix.webpackConfig({
  * 各ページで使用するJavaScript
  */
 mix.vue3('resources/js/pages/home/login.js', 'public/js/pages/home/login.js')
-mix.vue3('resources/js/pages/home/logout.ts', 'public/js/pages/home/logout.js')
+    .vue3('resources/js/pages/home/logout.ts', 'public/js/pages/home/logout.js')
+
+/**
+ * CSS関連
+ */
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [ tailwindcss('./tailwind.config.js') ],
+    });
