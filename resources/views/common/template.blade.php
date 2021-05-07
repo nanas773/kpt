@@ -7,7 +7,7 @@
     <meta name="description" itemprop="description" content="@yield('description')">
     <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @yield('pageCss')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <div id="app"></div>
