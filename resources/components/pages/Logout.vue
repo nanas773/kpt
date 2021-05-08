@@ -1,10 +1,25 @@
 <template>
-
+    <LogoutCard
+        :message="vars.logoutMessage"
+    />
 </template>
 
-<script lang="ts">
+<script>
+import LogoutCard from "@components/layouts/LogoutCard"
+
 export default {
-    name: "Logout"
+    name: "Logout",
+    components: {
+        LogoutCard
+    },
+    data() {
+        return {}
+    },
+    computed: {
+        vars() {
+            return window.VARS
+        }
+    }
 }
 </script>
 
