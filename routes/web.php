@@ -22,3 +22,5 @@ Route::get('/auth/redirect', function () {
 })->name('login.github');
 
 Route::get('/callback', [HomeController::class, 'callback']);
+
+Route::get('/logout', [HomeController::class, 'logout']);
