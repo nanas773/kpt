@@ -1,6 +1,6 @@
 const mix = require('laravel-mix')
 require("laravel-mix-vue3")
-const tailwindcss = require('tailwindcss')
+require('mix-tailwindcss')
 
 mix.webpackConfig({
     resolve: {
@@ -22,8 +22,5 @@ mix.vue3('resources/js/pages/home/login.js', 'public/js/pages/home/login.js')
 /**
  * CSS関連
  */
-    .sass('resources/sass/app.scss', 'public/css')
-    .options({
-        processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.config.js') ],
-    });
+    .postCss('resources/css/app.css', 'public/css')
+    .tailwind('tailwind.config.js');
