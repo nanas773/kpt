@@ -7,8 +7,8 @@ mix.webpackConfig({
         extensions: ['.js','.ts', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': __dirname + '/resources/',
-            '@components': __dirname + '/resources/components'
+            "@": path.resolve(__dirname, "resources"),
+            "@components": path.resolve(__dirname, "resources/components")
         }
     },
 })
