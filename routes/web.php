@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HomeController;
+use \App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,9 @@ Route::get('/auth/redirect', function () {
 Route::get('/callback', [HomeController::class, 'callback']);
 
 Route::get('/logout', [HomeController::class, 'logout']);
+
+// プロジェクト関連
+Route::get('projects', [ProjectController::class, 'index']);
+Route::prefix('project')->group(function() {
+    Route::get('/{id}', [ProjectController::class, 'detail']);
+});
