@@ -26,4 +26,4 @@ Route::get('/callback', [HomeController::class, 'callback']);
 
 Route::get('/logout', [HomeController::class, 'logout']);
 
-Route::get('/teams',[TeamController::class, 'index']);
+Route::get('/teams', [TeamController::class, 'index']);
