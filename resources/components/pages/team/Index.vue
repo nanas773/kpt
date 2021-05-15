@@ -1,4 +1,8 @@
 <template>
+ 
+  <div class="relative">
+    <!-- フッター固定用 -->
+
     <!-- いずれ増えてった時ようにヘッダーもfixedにしたほうがいいのだろうか -->
     <header class="grid grid-cols-6 bg-gray-100">
       <h1 class="col-start-2 col-span-4 text-center text-5xl py-10">
@@ -28,6 +32,10 @@
       </ul>
     </main>
 
+    <footer class="fixed bottom-5 right-10 bg-red-200">
+      <a href="#" class="py-5 bg-red-400">トップに戻る</a>
+    </footer>
+  </div>
 </template>
 
 <script>
