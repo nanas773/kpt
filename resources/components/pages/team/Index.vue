@@ -1,7 +1,8 @@
 <template>
  
-  <div class="relative">
-    <!-- フッター固定用 -->
+  <div class="relative text-gray-500">
+    <!-- フッター固定 -->
+    <!-- 文字色だけは後でCSSにしたほうがいいかもなあ -->
 
     <!-- いずれ増えてった時ようにヘッダーもfixedにしたほうがいいのだろうか -->
     <header class="grid grid-cols-6 bg-gray-100">
