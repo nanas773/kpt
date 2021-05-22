@@ -19,6 +19,73 @@
     </div>
     <!-- v-for 終了 -->
   </div>
+
+  <!-- kptの表示 -->
+  <div class="flex justify-between w-11/12 mx-auto">
+    <!-- Keepの表示 -->
+    <div class="bg-gray-200 w-1/3 m-3 p-2">
+      <div class="flex justify-between font-semibold text-lg m-2 px-3">
+        <p>Keep</p>
+        <a href="#">+</a>
+      </div>
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>task1</p>
+        <a class="underline" href="#">Done</a>
+      </div>
+      <!-- 以下 v-for でまわす -->
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>task2</p>
+        <a class="underline" href="#">Done</a>
+      </div>
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>task3</p>
+        <a class="underline" href="#">Done</a>
+      </div>
+      <!-- v-for 終了 -->
+    </div>
+    <!-- Problemの表示 -->
+    <div class="bg-gray-200 w-1/3 m-3 p-2">
+      <div class="flex justify-between font-semibold text-lg m-2 px-3">
+        <p>Problem</p>
+        <a href="#">+</a>
+      </div>
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>ProblemA</p>
+        <a class="underline" href="#">Resolved</a>
+      </div>
+      <!-- 以下 v-for でまわす -->
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>ProblemB</p>
+        <a class="underline" href="#">Resolved</a>
+      </div>
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>ProblemC</p>
+        <a class="underline" href="#">Resolved</a>
+      </div>
+      <!-- v-for 終了 -->
+    </div>
+    <!-- Tryの表示 -->
+    <div class="bg-gray-200 w-1/3 m-3 p-2">
+      <div class="flex justify-between font-semibold text-lg m-2 px-3">
+        <p>Try</p>
+        <a href="#">+</a>
+      </div>
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>task4</p>
+        <a class="underline" href="#">Keep</a>
+      </div>
+      <!-- 以下 v-for でまわす -->
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>task5</p>
+        <a class="underline" href="#">Keep</a>
+      </div>
+      <div class="flex justify-between bg-white m-2.5 p-3">
+        <p>task6</p>
+        <a class="underline" href="#">Keep</a>
+      </div>
+      <!-- v-for 終了 -->
+    </div>
+  </div>
 </template>
 
 <script>
