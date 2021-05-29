@@ -1,8 +1,7 @@
 <template>
-  <div class="relative text-gray-500">
-    <!-- フッター固定 -->
+  <div class="text-gray-500">
 
-    <header class="grid grid-cols-6 bg-gray-100 fixed top-0 left-0 w-full">
+    <header class="grid grid-cols-6 bg-gray-100">
       <h1 class="col-start-2 col-span-4 text-center text-3xl py-5">
         ユーザ名
       </h1>
@@ -15,7 +14,7 @@
     <main>
       <!-- fixedのheaderを表示するため下記mt-20にしているものの-->
       <!-- spanとかで空要素を入れてそれに高さを持たせた方が良かったりします？-->
-      <section class="mx-16 bg-gray-200 mt-24">
+      <section class="mx-16 bg-gray-200 mt-2">
         <h2 class="p-5 text-xl">チーム名</h2>
         <ul class="ml-16 my-2 text-xl">
           <li>
