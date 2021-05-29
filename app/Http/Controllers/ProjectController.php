@@ -29,7 +29,7 @@ class ProjectController extends Controller
      * @param Integer $id
      * @return View
      */
-    public function detail(Integer $id): View
+    public function show(Integer $id): View
     {
         return view('project.detail', [
             'title' => 'プロジェクト',
