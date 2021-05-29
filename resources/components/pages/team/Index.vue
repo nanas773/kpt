@@ -16,7 +16,7 @@
       <!-- fixedのheaderを表示するため下記mt-20にしているものの-->
       <!-- spanとかで空要素を入れてそれに高さを持たせた方が良かったりします？-->
       <section class="mx-16 bg-gray-200 mt-24">
-        <h1 class="p-5 text-xl">チーム名</h1>
+        <h2 class="p-5 text-xl">チーム名</h2>
         <ul class="ml-16 my-2 text-xl">
           <li>
             <a href="#" class="block p-3 bg-pink-100">プロジェクト名</a>
@@ -30,7 +30,7 @@
         </ul>
       </section>
       <section class="mx-16 bg-gray-200 mt-3">
-        <h1 class="p-5 text-xl">チーム名</h1>
+        <h2 class="p-5 text-xl">チーム名</h2>
         <ul class="ml-16 my-2 text-xl">
           <li>
             <a href="#" class="block p-3 bg-pink-100">プロジェクト名</a>
@@ -44,7 +44,7 @@
         </ul>
       </section>
       <section class="mx-16 bg-gray-200 mt-3">
-        <h1 class="p-5 text-xl">チーム名</h1>
+        <h2 class="p-5 text-xl">チーム名</h2>
         <ul class="ml-16 my-2 text-xl">
           <li>
             <a href="#" class="block p-3 bg-pink-100">プロジェクト名</a>
