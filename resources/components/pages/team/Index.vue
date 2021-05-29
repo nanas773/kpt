@@ -13,7 +13,8 @@
         </header>
 
         <main>
-            <!--            mt-20はheaderのため-->
+            <!-- fixedのheaderを表示するため下記mt-20にしているものの-->
+            <!-- spanとかで空要素を入れてそれに高さを持たせた方が良かったりします？-->
             <section class="mx-16 bg-gray-200 mt-24">
                 <h1 class="p-5 text-xl">チーム名</h1>
                 <ul class="ml-16 my-2 text-xl">
