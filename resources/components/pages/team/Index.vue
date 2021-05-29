@@ -12,8 +12,6 @@
     </header>
 
     <main>
-      <!-- fixedのheaderを表示するため下記mt-20にしているものの-->
-      <!-- spanとかで空要素を入れてそれに高さを持たせた方が良かったりします？-->
       <section class="mx-16 bg-gray-200 mt-2">
         <h2 class="p-5 text-xl">チーム名</h2>
         <ul class="ml-16 my-2 text-xl">
@@ -59,10 +57,6 @@
 
     </main>
 
-    <!-- よく考えたらここがトップでは？これいる？？ -->
-    <!--        <footer class="fixed bottom-5 right-10 bg-red-200">-->
-    <!--            <a href="#" class="py-5 bg-red-400">トップに戻る</a>-->
-    <!--        </footer>-->
   </div>
 </template>
 
