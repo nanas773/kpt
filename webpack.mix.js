@@ -18,6 +18,7 @@ mix.webpackConfig({
  */
 mix.vue3('resources/js/pages/home/login.js', 'public/js/pages/home/login.js')
     .vue3('resources/js/pages/home/logout.ts', 'public/js/pages/home/logout.js')
+    .vue3('resources/js/pages/team/index.js', 'public/js/pages/team/index.js')
 
 /**
  * CSS関連
