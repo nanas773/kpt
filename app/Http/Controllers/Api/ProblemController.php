@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class ProblemController extends Controller
 {
 
-    function index()
+    public function index()
     {
         //TODO: Problem 一覧を取得して返すようにする
         return response()->json('Hello');
     }
 
-    function store(Request $request)
+    public function store(Request $request)
     {
         $project_id = $request->input('project_id');
         $problem = \App\Models\Problem::create($request->toArray());
