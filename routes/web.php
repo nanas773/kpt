@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TeamController;
 
 /*
@@ -26,4 +27,5 @@ Route::get('/callback', [HomeController::class, 'callback']);
 
 Route::get('/logout', [HomeController::class, 'logout']);
 
+Route::resource('projects', ProjectController::class, ['only' => ['index', 'show']]);
 Route::get('/teams', [TeamController::class, 'index']);
