@@ -47,7 +47,7 @@
     <div class="bg-gray-200 w-1/3 m-3 p-2">
       <div class="flex justify-between font-semibold text-lg m-2 px-3">
         <p>Problem</p>
-        <a href="#">+</a>
+        <button @click="createProblem">+</button>
       </div>
       <div class="flex justify-between bg-white m-2.5 p-3">
         <p>ProblemA</p>
@@ -89,9 +89,26 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: "Detail",
-};
+  methods: {
+    createProblem: async function() {
+      try {
+        //とりあえず適当な値
+        const response = await axios.post('/api/problems', {
+          project_id: 1,
+          content: '朝起きるのが辛い',
+          is_resolved: false
+        })
+        alert(response.data)
+      } catch (error) {
+        alert(error.message)
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
