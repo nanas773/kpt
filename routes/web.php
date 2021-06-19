@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\HomeController;
@@ -29,3 +30,4 @@ Route::get('/logout', [HomeController::class, 'logout']);
 
 Route::resource('projects', ProjectController::class, ['only' => ['index', 'show']]);
 Route::get('/teams', [TeamController::class, 'index']);
+Route::resource('user', UserController::class, ['only' => ['info', 'edit']]);
