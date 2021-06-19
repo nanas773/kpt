@@ -30,4 +30,6 @@ Route::get('/logout', [HomeController::class, 'logout']);
 
 Route::resource('projects', ProjectController::class, ['only' => ['index', 'show']]);
 Route::get('/teams', [TeamController::class, 'index']);
-Route::resource('user', UserController::class, ['only' => ['info', 'edit']]);
+Route::get('/users', [UserController::class, 'info']);
+Route::get('/users/edit', [UserController::class, 'edit']);
+
