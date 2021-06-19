@@ -47,7 +47,7 @@
     <div class="bg-gray-200 w-1/3 m-3 p-2">
       <div class="flex justify-between font-semibold text-lg m-2 px-3">
         <p>Problem</p>
-        <button @click="createProblem">+</button>
+        <button @click="toggleKptInputModal">+</button>
       </div>
       <div class="flex justify-between bg-white m-2.5 p-3">
         <p>ProblemA</p>
@@ -86,6 +86,26 @@
       <!-- v-for 終了 -->
     </div>
   </div>
+
+  <!-- 入力フォームモーダル 別のコンポーネントとして切り出した方が良い気がする-->
+  <modal id="kpt-input-modal" v-if="showModal" >
+    <div class="modal-mask fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-opacity table" >
+      <div class="modal-wrapper table-cell align-middle">
+        <div class="modal-container w-1/2 mx-auto my-0 px-10 py-3 bg-white rounded shadow transition-all">
+          <div class="modal-header">
+            もーだるへっだー
+          </div>
+          <div class="modal-body my-10">
+            もーだるぼでぃ
+          </div>
+          <div class="modal-footer">
+            もーだるふったー
+            <button @click="toggleKptInputModal" class="float-right">ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </modal>
 </template>
 
 <script>
@@ -93,6 +113,11 @@ import axios from 'axios'
 
 export default {
   name: "Detail",
+  data: function() {
+    return {
+      showModal: false
+    }
+  }, 
   methods: {
     createProblem: async function() {
       try {
@@ -106,6 +131,9 @@ export default {
       } catch (error) {
         alert(error.message)
       }
+    },
+    toggleKptInputModal: function() {
+      this.showModal = !this.showModal
     }
   }
 }
