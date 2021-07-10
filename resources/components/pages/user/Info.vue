@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "Index",
+  name: "Info",
 }
 </script>
 
