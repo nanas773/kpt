@@ -49,20 +49,10 @@
         <p>Problem</p>
         <button @click="createProblem">+</button>
       </div>
-      <div class="flex justify-between bg-white m-2.5 p-3">
-        <p>ProblemA</p>
+      <div v-for="problem in problems" class="flex justify-between bg-white m-2.5 p-3">
+        <p>{{ problem.content }}</p>
         <a class="underline" href="#">Resolved</a>
       </div>
-      <!-- 以下 v-for でまわす -->
-      <div class="flex justify-between bg-white m-2.5 p-3">
-        <p>ProblemB</p>
-        <a class="underline" href="#">Resolved</a>
-      </div>
-      <div class="flex justify-between bg-white m-2.5 p-3">
-        <p>ProblemC</p>
-        <a class="underline" href="#">Resolved</a>
-      </div>
-      <!-- v-for 終了 -->
     </div>
     <!-- Tryの表示 -->
     <div class="bg-gray-200 w-1/3 m-3 p-2">
@@ -93,6 +83,16 @@ import axios from 'axios'
 
 export default {
   name: "Detail",
+  data: function() {
+    return {
+      problems: []
+    }
+  },
+  mounted: function () {
+    axios.get('/api/problems').then(response => {
+      this.problems = JSON.parse(response.data)
+    })
+  },
   methods: {
     createProblem: async function() {
       try {
