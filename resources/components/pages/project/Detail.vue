@@ -47,7 +47,7 @@
     <div class="bg-gray-200 w-1/3 m-3 p-2">
       <div class="flex justify-between font-semibold text-lg m-2 px-3">
         <p>Problem</p>
-        <button @click="createProblem">+</button>
+        <button @click="toggleKptInputModal">+</button>
       </div>
       <div class="flex justify-between bg-white m-2.5 p-3">
         <p>ProblemA</p>
@@ -86,6 +86,30 @@
       <!-- v-for 終了 -->
     </div>
   </div>
+
+  <!-- 入力フォームモーダル 別のコンポーネントとして切り出した方が良い気がする-->
+  <modal id="kpt-input-modal" v-if="showModal" >
+    <div class="modal-mask fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-opacity table" >
+      <div class="modal-wrapper table-cell align-middle">
+        <div class="modal-container w-1/2 mx-auto my-0 bg-white rounded shadow transition-all">
+          <div class="modal-header py-3 px-3 bg-yellow-300 flex justify-between">
+            <div class="flex items-center">
+              <span class="text-3xl">🥺</span> <span class="px-2">Problem を入力してください</span>
+            </div>
+            <div>
+              <button @click="toggleKptInputModal" class="outline-none"><img src="/images/icons/close.png" alt="閉じる"></button>
+            </div>
+          </div>
+          <div class="modal-body py-10 px-10">
+            <textarea class="w-full h-40 p-2 border-4 border-solid border-yellow-300 outline-none focus:border-yellow-400" v-model="problemContent" type="text" name="problem_content" placeholder="朝起きるのが辛い"></textarea>
+          </div>
+          <div class="modal-footer px-10 flex justify-end pb-8">
+            <button @click="toggleKptInputModal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right">ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </modal>
 </template>
 
 <script>
@@ -93,6 +117,12 @@ import axios from 'axios'
 
 export default {
   name: "Detail",
+  data: function() {
+    return {
+      showModal: false,
+      problemContent: ''
+    }
+  }, 
   methods: {
     createProblem: async function() {
       try {
@@ -106,6 +136,10 @@ export default {
       } catch (error) {
         alert(error.message)
       }
+    },
+    toggleKptInputModal: function() {
+      this.showModal = !this.showModal
+      this.problemContent = ''
     }
   }
 }
