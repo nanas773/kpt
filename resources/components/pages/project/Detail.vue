@@ -138,8 +138,8 @@ export default {
       }
     },
     toggleKptInputModal: function() {
-      alert(this.problemContent)
       this.showModal = !this.showModal
+      this.problemContent = ''
     }
   }
 }
