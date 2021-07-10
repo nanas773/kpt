@@ -91,16 +91,20 @@
   <modal id="kpt-input-modal" v-if="showModal" >
     <div class="modal-mask fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-opacity table" >
       <div class="modal-wrapper table-cell align-middle">
-        <div class="modal-container w-1/2 mx-auto my-0 px-10 py-3 bg-white rounded shadow transition-all">
-          <div class="modal-header">
-            もーだるへっだー
+        <div class="modal-container w-1/2 mx-auto my-0 bg-white rounded shadow transition-all">
+          <div class="modal-header py-3 px-3 bg-yellow-300 flex justify-between">
+            <div class="flex items-center">
+              <span class="text-3xl">🥺</span> <span class="px-2">Problem を入力してください</span>
+            </div>
+            <div>
+              <button @click="toggleKptInputModal" class="outline-none"><img src="/images/icons/close.png" alt="閉じる"></button>
+            </div>
           </div>
-          <div class="modal-body my-10">
-            もーだるぼでぃ
+          <div class="modal-body py-10 px-10">
+            <textarea class="w-full h-40 p-2 border-4 border-solid border-yellow-300 outline-none focus:border-yellow-400" v-model="problemContent" type="text" name="problem_content" placeholder="朝起きるのが辛い"></textarea>
           </div>
-          <div class="modal-footer">
-            もーだるふったー
-            <button @click="toggleKptInputModal" class="float-right">ok</button>
+          <div class="modal-footer px-10 flex justify-end pb-8">
+            <button @click="toggleKptInputModal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right">ok</button>
           </div>
         </div>
       </div>
@@ -115,7 +119,8 @@ export default {
   name: "Detail",
   data: function() {
     return {
-      showModal: false
+      showModal: false,
+      problemContent: ''
     }
   }, 
   methods: {
@@ -133,6 +138,7 @@ export default {
       }
     },
     toggleKptInputModal: function() {
+      alert(this.problemContent)
       this.showModal = !this.showModal
     }
   }
