@@ -26,7 +26,7 @@
     <div class="bg-gray-200 w-1/3 m-3 p-2">
       <div class="flex justify-between font-semibold text-lg m-2 px-3">
         <p>Keep</p>
-        <a href="#">+</a>
+        <a href="#" @click="createProblem">+</a>
       </div>
       <div class="flex justify-between bg-white m-2.5 p-3">
         <p>task1</p>
@@ -49,7 +49,10 @@
         <p>Problem</p>
         <button @click="createProblem">+</button>
       </div>
-      <div v-for="problem in problems" class="flex justify-between bg-white m-2.5 p-3">
+      <div
+        v-for="problem in problems"
+        class="flex justify-between bg-white m-2.5 p-3"
+      >
         <p>{{ problem.content }}</p>
         <a class="underline" href="#">Resolved</a>
       </div>
@@ -79,36 +82,49 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   name: "Detail",
-  data: function() {
+  data: function () {
     return {
-      problems: []
-    }
+      problems: [],
+    };
   },
   mounted: function () {
-    axios.get('/api/problems').then(response => {
-      this.problems = JSON.parse(response.data)
-    })
+    axios.get("/api/problems").then((response) => {
+      this.problems = JSON.parse(response.data);
+    });
   },
   methods: {
-    createProblem: async function() {
+    createProblem: async function () {
       try {
         //とりあえず適当な値
-        const response = await axios.post('/api/problems', {
+        const response = await axios.post("/api/problems", {
           project_id: 1,
-          content: '朝起きるのが辛い',
-          is_resolved: false
-        })
-        alert(response.data)
+          content: "朝起きるのが辛い",
+          is_resolved: false,
+        });
+        alert(response.data);
       } catch (error) {
-        alert(error.message)
+        alert(error.message);
       }
-    }
-  }
-}
+    },
+    createKeep: async function () {
+      try {
+        const response = await axios.post("/api/keeps", {
+          project_id: 1,
+          problem_id: 1,
+          state: "KEEP",
+          content: "22時までに就寝",
+        });
+        alert(response.data);
+      } catch (error) {
+        alert(error.message);
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
