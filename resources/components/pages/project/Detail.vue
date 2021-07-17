@@ -26,7 +26,7 @@
     <div class="bg-gray-200 w-1/3 m-3 p-2">
       <div class="flex justify-between font-semibold text-lg m-2 px-3">
         <p>Keep</p>
-        <a href="#" @click="createKeep">+</a>
+        <button @click="createKeep">+</button>
       </div>
       <div class="flex justify-between bg-white m-2.5 p-3">
         <p>task1</p>
