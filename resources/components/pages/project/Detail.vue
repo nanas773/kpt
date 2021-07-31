@@ -115,7 +115,7 @@ export default {
     })
   },
   methods: {
-    createProblem: async function() {
+    async createProblem() {
       try {
         //とりあえず適当な値
         const response = await axios.post('/api/problems', {
@@ -128,7 +128,7 @@ export default {
         alert(error.message)
       }
     },
-    toggleKptInputModal: function() {
+    toggleKptInputModal() {
       this.showModal = !this.showModal
     }
   }
