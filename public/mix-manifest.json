@@ -1,0 +1,10 @@
+{
+    "/js/pages/home/login.js": "/js/pages/home/login.js",
+    "/js/pages/home/logout.js": "/js/pages/home/logout.js",
+    "/js/pages/project/detail.js": "/js/pages/project/detail.js",
+    "/js/pages/project/index.js": "/js/pages/project/index.js",
+    "/js/pages/team/index.js": "/js/pages/team/index.js",
+    "/js/pages/user/edit.js": "/js/pages/user/edit.js",
+    "/js/pages/user/info.js": "/js/pages/user/info.js",
+    "/css/app.css": "/css/app.css"
+}

@@ -1,3 +1,5 @@
+
+
 const mix = require('laravel-mix')
 require("laravel-mix-vue3")
 require('mix-tailwindcss')
@@ -21,6 +23,8 @@ mix.vue3('resources/js/pages/home/login.js', 'public/js/pages/home/login.js')
     .vue3('resources/js/pages/project/index.js', 'public/js/pages/project/index.js')
     .vue3('resources/js/pages/project/detail.js', 'public/js/pages/project/detail.js')
     .vue3('resources/js/pages/team/index.js', 'public/js/pages/team/index.js')
+    .vue3('resources/js/pages/user/info.js','public/js/pages/user/info.js')
+    .vue3('resources/js/pages/user/edit.js','public/js/pages/user/edit.js')
 
 /**
  * CSS関連
