@@ -49,20 +49,10 @@
         <p>Problem</p>
         <button @click="toggleKptInputModal">+</button>
       </div>
-      <div class="flex justify-between bg-white m-2.5 p-3">
-        <p>ProblemA</p>
+      <div v-for="problem in problems" class="flex justify-between bg-white m-2.5 p-3">
+        <p>{{ problem.content }}</p>
         <a class="underline" href="#">Resolved</a>
       </div>
-      <!-- 以下 v-for でまわす -->
-      <div class="flex justify-between bg-white m-2.5 p-3">
-        <p>ProblemB</p>
-        <a class="underline" href="#">Resolved</a>
-      </div>
-      <div class="flex justify-between bg-white m-2.5 p-3">
-        <p>ProblemC</p>
-        <a class="underline" href="#">Resolved</a>
-      </div>
-      <!-- v-for 終了 -->
     </div>
     <!-- Tryの表示 -->
     <div class="bg-gray-200 w-1/3 m-3 p-2">
@@ -120,11 +110,16 @@ export default {
   data: function() {
     return {
       showModal: false,
-      problemContent: ''
+      problems: []
     }
-  }, 
+  },
+  mounted: function () {
+    axios.get('/api/problems').then(response => {
+      this.problems = JSON.parse(response.data)
+    })
+  },
   methods: {
-    createProblem: async function() {
+    async createProblem() {
       try {
         //とりあえず適当な値
         const response = await axios.post('/api/problems', {
@@ -137,9 +132,8 @@ export default {
         alert(error.message)
       }
     },
-    toggleKptInputModal: function() {
+    toggleKptInputModal() {
       this.showModal = !this.showModal
-      this.problemContent = ''
     }
   }
 }
