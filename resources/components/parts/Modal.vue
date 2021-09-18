@@ -4,7 +4,7 @@
         <div class="modal-container w-1/2 mx-auto my-0 bg-white rounded shadow transition-all">
           <div class="modal-header py-3 px-3 bg-yellow-300 flex justify-between">
             <div class="flex items-center">
-              <span class="px-2">${props.modalTitle}</span>
+              <span class="px-2">{modalTitle}</span>
             </div>
             <div>
               <button @click="closeModal" class="outline-none"><img
