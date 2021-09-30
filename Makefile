@@ -102,3 +102,9 @@ ide-helper:
 	docker compose exec app php artisan ide-helper:generate
 	docker compose exec app php artisan ide-helper:meta
 	docker compose exec app php artisan ide-helper:models --nowrite
+lint:
+	docker compose run app composer cs
+	docker compose run web yarn lint
+lint-fix:
+	docker compose run app composer cbf
+	docker compose run web yarn lint:fix
